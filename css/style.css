@@ -90,20 +90,12 @@ p{margin:0}
 .partners__inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
 .partners__label{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#4b5068;white-space:nowrap}
 .partners__logos{display:flex;align-items:center;justify-content:space-between;flex:1;max-width:1065px;gap:28px}
-.plogo{display:inline-flex;align-items:center;gap:7px;color:#2c313f;font-weight:600;font-size:29px;letter-spacing:-.02em;line-height:1;opacity:.92;transition:opacity .2s}
+.plogo{display:block;height:34px;width:auto;max-width:100%;opacity:.92;transition:opacity .2s}
 .plogo:hover{opacity:1}
-.plogo svg{fill:currentColor;flex-shrink:0}
-.plogo--google{font-weight:500;letter-spacing:-.01em}
-.plogo--meta{font-weight:500}
-.plogo--meta svg{width:30px;height:30px}
-.plogo--hubspot{font-weight:600}
-.plogo--hubspot svg{width:22px;height:22px;margin:0 -3px}
-.plogo--shopify{font-style:italic;font-weight:800;font-size:25px}
-.plogo--shopify svg{width:26px;height:26px}
-.plogo--linkedin{font-weight:700;font-size:26px;gap:2px}
-.plogo--linkedin .in{display:inline-grid;place-items:center;background:#2c313f;color:var(--bg-2);border-radius:3px;font-size:19px;width:26px;height:24px;font-weight:800;letter-spacing:-.04em}
-.plogo--semrush{font-weight:800;font-size:25px;letter-spacing:.01em;gap:10px}
-.plogo--semrush svg{width:38px;height:26px}
+.plogo--google{height:35px}
+.plogo--meta{height:28px}
+.plogo--linkedin{height:31px}
+.plogo--semrush{height:21px}
 
 /* ---------- About ---------- */
 .about{display:grid;grid-template-columns:47.8% 1fr;background:var(--bg);min-height:510px}
@@ -374,12 +366,11 @@ p{margin:0}
   .partners{padding:32px 0}
   .partners__inner{align-items:center}
   .partners__logos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 12px;justify-items:center}
-  .plogo{font-size:19px;gap:5px}
-  .plogo--meta svg{width:22px;height:22px}
-  .plogo--hubspot svg{width:16px;height:16px}
-  .plogo--shopify{font-size:18px}.plogo--shopify svg{width:19px;height:19px}
-  .plogo--linkedin{font-size:19px}.plogo--linkedin .in{width:20px;height:18px;font-size:14px}
-  .plogo--semrush{font-size:17px;gap:6px}.plogo--semrush svg{width:26px;height:18px}
+  .plogo{height:24px}
+  .plogo--google{height:25px}
+  .plogo--meta{height:20px}
+  .plogo--linkedin{height:22px}
+  .plogo--semrush{height:15px}
 
   .about{grid-template-columns:1fr}
   .about__media{min-height:300px}
