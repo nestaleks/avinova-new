@@ -1,0 +1,5 @@
+/* Steps (Unser Prozess): icons from img/icons, colour #19224b is set inside the SVG files */
+.step__icon img{display:block;width:44px;height:44px;object-fit:contain}
+@media (max-width:768px){
+  .step__icon img{width:30px;height:30px}
+}

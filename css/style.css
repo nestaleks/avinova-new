@@ -42,8 +42,8 @@ p{margin:0}
 /* ---------- Buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;height:70px;padding:0 46px;border-radius:999px;background:var(--dark);color:#fff;font-weight:500;font-size:22px;border:0;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;white-space:nowrap}
 .btn:hover{background:#0f2b2a;transform:translateY(-1px);box-shadow:0 10px 24px rgba(6,26,26,.22)}
-.btn svg{width:22px;height:22px;transition:transform .2s}
-.btn:hover svg{transform:translateX(3px)}
+.btn img{width:22px;height:22px;flex-shrink:0;transition:transform .2s}
+.btn:hover img{transform:translateX(3px)}
 .btn--sm{height:70px;padding:0 52px}
 .btn--light{background:#fff;color:var(--dark)}
 .btn--light:hover{background:#eef2f1}
@@ -74,13 +74,15 @@ p{margin:0}
 .menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;background:var(--bg);overflow:hidden;min-height:686px;display:flex;align-items:center}
-.hero__media{position:absolute;top:0;right:0;bottom:0;width:59%;background:url(../img/hero.png) right center/cover no-repeat}
-.hero__media::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(251,250,246,.92) 12%,rgba(251,250,246,.55) 24%,rgba(251,250,246,0) 40%)}
-.hero__content{position:relative;z-index:2;padding:92px 0 32px;max-width:760px}
+.hero{--hero-copy:clamp(560px,calc(100vw - 608px),760px);--hero-fade:140px;position:relative;background:var(--bg);overflow:hidden;min-height:686px;display:flex;align-items:center}
+/* image panel starts where the text column ends (minus a soft fade), so the copy never sits on the wall sign */
+.hero__media{position:absolute;top:0;right:0;bottom:0;width:calc(100% - max(var(--gutter),(100% - var(--container))/2) - var(--hero-copy) + var(--hero-fade));background:url(../img/hero.png) right center/cover no-repeat}
+.hero__media::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0,rgba(251,250,246,.85) calc(var(--hero-fade)*.45),rgba(251,250,246,0) calc(var(--hero-fade) + 60px))}
+.hero__content{position:relative;z-index:2;padding:92px 0 32px;max-width:var(--hero-copy)}
 .hero h1{max-width:640px;font-size:69px;line-height:1.1;letter-spacing:-.025em;margin-bottom:28px}
 .hero h1 .accent{color:var(--accent)}
 .hero__lead{font-size:24px;line-height:1.55;color:#2f3443;max-width:720px;margin-bottom:40px}
+.hero__checks{max-width:100%}
 .hero__checks{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:36px;padding:0;list-style:none}
 .hero__checks li{display:flex;align-items:center;gap:14px;font-size:19px;color:#5a5f6e}
 .hero__checks svg{width:19px;height:19px;color:#2b3040}
@@ -161,7 +163,7 @@ p{margin:0}
 .contact__lead{font-size:24px;line-height:1.35;max-width:560px;margin-bottom:14px}
 .checklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .checklist li{display:flex;align-items:center;gap:24px;font-size:23px}
-.checklist svg{width:38px;height:38px;flex-shrink:0;color:var(--check)}
+.checklist img{width:38px;height:38px;flex-shrink:0}
 
 .form-card{background:#fff;border-radius:12px;padding:20px 42px 22px;color:var(--ink);box-shadow:0 20px 50px rgba(0,0,0,.25)}
 .form-card h3{font-size:29px;font-weight:600;margin-bottom:12px;letter-spacing:-.01em}
@@ -293,7 +295,7 @@ p{margin:0}
 @media (max-width:1280px){
   :root{--gutter:48px}
   .nav{margin-left:56px;gap:34px}
-  .hero h1{font-size:58px}
+  .hero h1{font-size:58px;max-width:520px}
   .hero__lead{font-size:21px}
   .about h2{font-size:48px}
   .about p,.step p,.case-card p{font-size:19px}
@@ -307,12 +309,19 @@ p{margin:0}
   .stat-card{right:36px}
 }
 
+/* Hero: below 1200px the text and the image are stacked so the copy never covers the wall sign */
+@media (max-width:1200px){
+  .hero{flex-direction:column;align-items:stretch;min-height:0}
+  .hero__media{position:relative;width:100%;height:clamp(340px,42vw,440px);order:2;background-position:right center}
+  .hero__media::before{background:linear-gradient(180deg,var(--bg) 0,rgba(251,250,246,0) 14%)}
+  .hero__content{padding:64px 0 40px;max-width:760px}
+  .hero h1{font-size:54px}
+  .hero__lead{font-size:21px;max-width:680px}
+}
+
 @media (max-width:1100px){
   .partners__inner{flex-direction:column;align-items:flex-start;gap:22px}
   .partners__logos{width:100%;max-width:none;flex-wrap:wrap;justify-content:flex-start;gap:26px 44px}
-  .hero__media{width:65%}
-  .hero__content{max-width:620px}
-  .hero__lead{max-width:560px}
   .about{grid-template-columns:1fr 1fr}
   .about__content{padding:56px var(--gutter) 56px 48px}
   .steps{grid-template-columns:repeat(2,1fr);gap:40px 24px}
@@ -340,8 +349,10 @@ p{margin:0}
   .nav a::after{display:none}
   .nav .btn{display:flex;margin-top:28px;color:#fff;font-size:18px;border:0;padding:0}
   .menu-open .nav{opacity:1;visibility:visible;transform:none}
-  .menu-open{overflow:hidden}
+  .menu-open body{overflow:hidden}
   .burger{display:block}
+  /* backdrop-filter would make the header the containing block of the fixed menu → menu ends up off-screen */
+  .header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
 }
 @media (min-width:901px){.nav .btn{display:none}}
 
@@ -353,9 +364,7 @@ p{margin:0}
   .logo img{height:22px}
   .eyebrow{font-size:11px;letter-spacing:.2em;margin-bottom:14px}
 
-  .hero{flex-direction:column;align-items:stretch;min-height:0}
-  .hero__media{position:relative;width:100%;height:300px;order:2;background-position:60% center}
-  .hero__media::before{background:linear-gradient(180deg,var(--bg) 0%,rgba(251,250,246,0) 28%)}
+  .hero__media{height:clamp(240px,64vw,320px);background-position:right center}
   .hero__content{padding:44px 0 34px;max-width:none}
   .hero h1{font-size:38px;margin-bottom:18px}
   .hero__lead{font-size:16.5px;line-height:1.7;margin-bottom:28px}
@@ -420,7 +429,7 @@ p{margin:0}
   .contact__inner{position:relative;padding-top:36px;padding-bottom:24px}
   .contact__lead{font-size:16.5px;line-height:1.6}
   .checklist li{font-size:16.5px;gap:14px}
-  .checklist svg{width:30px;height:30px}
+  .checklist img{width:30px;height:30px}
   .form-card{padding:24px 20px}
   .form-card h3{font-size:22px}
   .form-grid{grid-template-columns:1fr;gap:10px}

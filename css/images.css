@@ -1,0 +1,68 @@
+/* =========================================================
+   Responsive background images (WebP)
+   Loaded last on every page that uses photo backgrounds.
+   Each rule only swaps background-image; position/size stay in the original CSS.
+   The browser downloads ONLY the file whose rule applies to the current screen.
+   Pattern: plain url() = fallback, then -webkit-image-set (older Safari), then image-set (1x / 2x screens).
+   ========================================================= */
+
+/* ---------- index.html · Hero (.hero-d) ---------- */
+/* ≥1025px: photo is the section background, rendered ~1800–2000px wide → always the large file */
+@media (min-width:1025px){
+  .hero-d{background-image:url(../img/hero-2089.webp)}
+}
+/* ≤1024px: photo sits below the text */
+@media (max-width:1024px){
+  .hero-d__media{
+    background-image:url(../img/hero-1400.webp);
+    background-image:-webkit-image-set(url(../img/hero-1400.webp) 1x,url(../img/hero-2089.webp) 2x);
+    background-image:image-set(url(../img/hero-1400.webp) 1x,url(../img/hero-2089.webp) 2x)}
+}
+@media (max-width:768px){
+  .hero-d__media{
+    background-image:url(../img/hero-800.webp);
+    background-image:-webkit-image-set(url(../img/hero-800.webp) 1x,url(../img/hero-1400.webp) 2x);
+    background-image:image-set(url(../img/hero-800.webp) 1x,url(../img/hero-1400.webp) 2x)}
+}
+
+/* ---------- index.html · Über uns ---------- */
+.about__media{background-image:url(../img/about-team-1044.webp)}
+@media (max-width:768px){
+  .about__media{
+    background-image:url(../img/about-team-640.webp);
+    background-image:-webkit-image-set(url(../img/about-team-640.webp) 1x,url(../img/about-team-1044.webp) 2x);
+    background-image:image-set(url(../img/about-team-640.webp) 1x,url(../img/about-team-1044.webp) 2x)}
+}
+
+/* ---------- index.html · Testimonial ---------- */
+.testimonial__media{
+  background-image:url(../img/testimonial-640.webp);
+  background-image:-webkit-image-set(url(../img/testimonial-640.webp) 1x,url(../img/testimonial-1100.webp) 2x);
+  background-image:image-set(url(../img/testimonial-640.webp) 1x,url(../img/testimonial-1100.webp) 2x)}
+
+/* ---------- Kontakt (index + case-studies) ---------- */
+.contact{
+  background-image:url(../img/contact-bg-1400.webp);
+  background-image:-webkit-image-set(url(../img/contact-bg-1400.webp) 1x,url(../img/contact-bg-2172.webp) 2x);
+  background-image:image-set(url(../img/contact-bg-1400.webp) 1x,url(../img/contact-bg-2172.webp) 2x)}
+@media (min-width:1600px){
+  .contact{background-image:url(../img/contact-bg-2172.webp)}
+}
+@media (max-width:768px){   /* darkened by an overlay on mobile → the small file is enough */
+  .contact{
+    background-image:url(../img/contact-bg-800.webp);
+    background-image:-webkit-image-set(url(../img/contact-bg-800.webp) 1x,url(../img/contact-bg-1400.webp) 2x);
+    background-image:image-set(url(../img/contact-bg-800.webp) 1x,url(../img/contact-bg-1400.webp) 2x)}
+}
+
+/* ---------- case-studies.html · Hero ---------- */
+.page-hero__media{
+  background-image:url(../img/studies-hero-1300.webp);
+  background-image:-webkit-image-set(url(../img/studies-hero-1300.webp) 1x,url(../img/studies-hero-1774.webp) 2x);
+  background-image:image-set(url(../img/studies-hero-1300.webp) 1x,url(../img/studies-hero-1774.webp) 2x)}
+@media (max-width:768px){
+  .page-hero__media{
+    background-image:url(../img/studies-hero-800.webp);
+    background-image:-webkit-image-set(url(../img/studies-hero-800.webp) 1x,url(../img/studies-hero-1300.webp) 2x);
+    background-image:image-set(url(../img/studies-hero-800.webp) 1x,url(../img/studies-hero-1300.webp) 2x)}
+}

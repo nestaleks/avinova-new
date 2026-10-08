@@ -1,0 +1,66 @@
+/* =========================================================
+   HERO — dark, full-bleed photo (Variante 3)
+   Separate file so it is independent of style.css
+   ========================================================= */
+.hero-d{position:relative;min-height:720px;display:flex;align-items:center;overflow:hidden;color:#fff;
+  background:var(--dark) url(../img/hero.png) right center/cover no-repeat}
+.hero-d::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(6,26,26,.96) 0%,rgba(6,26,26,.9) 32%,rgba(6,26,26,.45) 52%,rgba(6,26,26,0) 66%)}
+.hero-d .container{position:relative;z-index:1}
+.hero-d__content{max-width:clamp(420px,calc(100vw - 640px),660px);padding:80px 0}
+
+.hero-d .eyebrow{color:#c9d6d0;margin-bottom:18px}
+.hero-d h1{color:#fff;font-size:64px;line-height:1.08;letter-spacing:-.025em;margin-bottom:26px}
+.hero-d h1 .accent{color:#a9c7b6}
+.hero-d__lead{font-size:21px;line-height:1.6;color:#dfe7e4;margin-bottom:38px}
+.hero-d__checks{display:flex;flex-wrap:wrap;gap:12px 32px;margin:32px 0 0;padding:0;list-style:none}
+.hero-d__checks li{display:flex;align-items:center;gap:12px;font-size:17px;color:#cfd9d5}
+.hero-d__checks svg{width:18px;height:18px;color:#a9c7b6;flex-shrink:0}
+.hero-d__checks img{display:block;width:20px;height:20px;flex-shrink:0}
+.hero-d__media{display:none}
+
+/* 1025–1280: narrower copy + slightly smaller type, so the text stays left of the wall sign */
+@media (max-width:1280px){
+  .hero-d{min-height:640px}
+  .hero-d__content{padding:64px 0}
+  .hero-d h1{font-size:clamp(44px,4.4vw,56px)}
+  .hero-d__lead{font-size:clamp(18px,1.6vw,20px);margin-bottom:32px}
+  .hero-d__checks{gap:10px 26px;margin-top:26px}
+  .hero-d__checks li{font-size:16px}
+}
+
+/* ≤1024: light background, dark text, photo below — the text gets the full container width */
+@media (max-width:1024px){
+  /* light theme: white background, dark text */
+  .hero-d{display:block;min-height:0;background:var(--bg);color:var(--ink)}
+  .hero-d::before{display:none}
+  .hero-d .eyebrow{color:var(--eyebrow)}
+  .hero-d h1{color:var(--ink)}
+  .hero-d h1 .accent{color:var(--accent)}
+  .hero-d__lead{color:#2f3443}
+  .hero-d__checks li{color:#5a5f6e}
+  .hero-d__checks svg{color:#2b3040}
+  .hero-d__checks img{content:url(../img/icons/check.svg)}   /* dark check on the light background */
+  .hero-d .btn--light{background:var(--dark);color:#fff}
+  .hero-d .btn--light:hover{background:#0f2b2a}
+  .hero-d .btn--light img{content:url(../img/icons/arrow-white.svg)}
+  .hero-d__content{max-width:none;padding:60px 0 44px}
+  .hero-d h1{font-size:54px;max-width:860px}
+  .hero-d__lead{font-size:20px;max-width:820px}
+  .hero-d__media{display:block;position:relative;height:clamp(320px,44vw,440px);
+    background:url(../img/hero.png) right center/cover no-repeat}
+  .hero-d__media::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,var(--bg) 0,rgba(251,250,246,0) 18%)}
+}
+
+@media (max-width:768px){
+  .hero-d__content{padding:40px 0 34px}
+  .hero-d h1{font-size:38px;margin-bottom:18px}
+  .hero-d__lead{font-size:16.5px;line-height:1.7;margin-bottom:28px}
+  .hero-d__checks{flex-direction:column;gap:10px;margin-top:24px}
+  .hero-d__checks li{font-size:15px}
+  .hero-d__media{height:clamp(240px,64vw,320px)}
+}
+@media (max-width:380px){
+  .hero-d h1{font-size:33px}
+}
