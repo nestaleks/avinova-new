@@ -41,8 +41,7 @@
   .hero-d__checks li{color:#5a5f6e}
   .hero-d__checks svg{color:#2b3040}
   .hero-d__checks img{content:url(../img/icons/check.svg)}   /* dark check on the light background */
-  .hero-d .btn--light{background:var(--dark);color:#fff}
-  .hero-d .btn--light:hover{background:#0f2b2a}
+  .hero-d .btn--light{--hover-fill:#0f2b2a;background:var(--dark);color:#fff}
   .hero-d .btn--light img{content:url(../img/icons/arrow-white.svg)}
   .hero-d__content{max-width:none;padding:60px 0 44px}
   .hero-d h1{font-size:54px;max-width:860px}
