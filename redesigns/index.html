@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVINOVA – Redesign-Konzepte</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#061a1a">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/base.css">
+<style>
+  :root{--gutter:clamp(20px,5vw,68px)}
+  body{background:var(--av-bg);color:var(--av-text);font-size:17px;line-height:1.6}
+  .wrap{max-width:1306px;margin:0 auto;padding:0 var(--gutter)}
+  header{padding:40px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  header img{height:28px;width:auto}
+  .orig{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid #d9dcd6;text-decoration:none;font-weight:500;color:var(--av-ink);transition:background .2s,border-color .2s}
+  .orig:hover{background:#fff;border-color:var(--av-ink)}
+  .intro{padding:48px 0 40px;max-width:760px}
+  .eyebrow{display:block;font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--av-eyebrow);margin-bottom:14px}
+  h1{font-size:clamp(36px,5vw,60px);line-height:1.08;letter-spacing:-.025em;color:var(--av-ink);margin-bottom:18px}
+  h1 span{color:var(--av-sage)}
+  .intro p{font-size:clamp(17px,1.5vw,20px);color:#4b5064}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:0 0 72px;list-style:none;margin:0}
+  .card{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:18px;overflow:hidden;border:1px solid #ebe9e3;box-shadow:0 1px 0 rgba(0,0,0,.03),0 10px 30px rgba(10,20,25,.05);transition:transform .35s var(--av-ease-out),box-shadow .35s}
+  .card:hover,.card:focus-within{transform:translateY(-4px);box-shadow:0 22px 50px rgba(10,20,25,.12)}
+  .card__media{aspect-ratio:16/7;overflow:hidden;background:var(--av-dark)}
+  .card__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--av-ease-out)}
+  .card:hover .card__media img{transform:scale(1.04)}
+  .card__body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .tag{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--av-sage)}
+  .card h3{font-size:26px;letter-spacing:-.015em;color:var(--av-ink)}
+  .card h3 a{text-decoration:none}
+  .card h3 a::after{content:"";position:absolute;inset:0}           /* whole card clickable */
+  .card h3 a:focus-visible{outline:none}
+  .card:focus-within{outline:2px solid var(--av-link);outline-offset:3px}
+  .card p{font-size:16px;color:#4b5064}
+  .card ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+  .card li{font-size:13px;padding:4px 10px;border-radius:999px;background:#f1f3ef;color:#3a4a44}
+  .card__go{margin-top:auto;padding-top:10px;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--av-ink)}
+  .card__go svg{width:20px;height:20px;transition:transform .25s}
+  .card:hover .card__go svg{transform:translateX(4px)}
+  .card--b .card__media img{filter:saturate(.85)}
+  .round{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--av-muted);margin:0 0 18px;padding-top:8px;border-top:1px solid #e6e4de}
+  .round + .grid{padding-top:4px}
+  footer{border-top:1px solid #e6e4de;padding:24px 0 40px;font-size:15px;color:var(--av-muted)}
+  footer a{color:var(--av-ink)}
+  @media (max-width:860px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="../img/logo-400.webp" srcset="../img/logo-400.webp 1x, ../img/logo-800.webp 2x" alt="AVINOVA" width="189" height="29">
+    <a class="orig" href="../index.html">Original-Website ansehen</a>
+  </header>
+  <main>
+    <section class="intro">
+      <span class="eyebrow">Redesign · 8 Konzepte</span>
+      <h1>Eine Marke. <span>Acht Richtungen.</span></h1>
+      <p>Acht funktionierende Weiterentwicklungen der AVINOVA-Website – mit den originalen Inhalten, Bildern und Farben. Alle Seiten (Startseite, Case Studies, Impressum, Datenschutz, AGB) sind umgesetzt.</p>
+    </section>
+    <h2 class="round">Runde 1 · A–D</h2>
+    <ul class="grid" role="list">
+      <li class="card card--a">
+        <div class="card__media"><img src="../img/hero-800.webp" srcset="../img/hero-800.webp 800w, ../img/hero-1400.webp 1400w" sizes="(max-width:860px) 100vw, 640px" alt="" width="800" height="288" style="object-position:right center"></div>
+        <div class="card__body">
+          <span class="tag">Konzept A</span>
+          <h3><a href="concept-a-refined/">Refined Original</a></h3>
+          <p>Die sicherste Option: gleiche Struktur und Anmutung, aber konsistente Typografie, ruhigerer Rhythmus, bessere Hierarchie und feine Animationen.</p>
+          <ul role="list"><li>Konsistente Typo-Skala</li><li>Scroll-Spy</li><li>Count-up</li><li>Desktop-CTA</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <li class="card card--b">
+        <div class="card__media"><img src="../img/contact-bg-800.webp" srcset="../img/contact-bg-800.webp 800w, ../img/contact-bg-1400.webp 1400w" sizes="(max-width:860px) 100vw, 640px" alt="" width="800" height="267" loading="lazy"></div>
+        <div class="card__body">
+          <span class="tag">Konzept B</span>
+          <h3><a href="concept-b-premium/">Modern Premium</a></h3>
+          <p>Editorial und ruhig: viel Weißraum, feine Linien, dunkle Flächen als Premium-Bühne, maskierte Bild-Reveals und eine Case-Liste mit Bildvorschau.</p>
+          <ul role="list"><li>Editorial-Grid</li><li>Clip-Path-Reveals</li><li>Parallax</li><li>Overlay-Menü</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <li class="card card--c">
+        <div class="card__media"><img src="../img/studies-hero-800.webp" srcset="../img/studies-hero-800.webp 800w, ../img/studies-hero-1300.webp 1300w" sizes="(max-width:860px) 100vw, 640px" alt="" width="800" height="400" loading="lazy"></div>
+        <div class="card__body">
+          <span class="tag">Konzept C</span>
+          <h3><a href="concept-c-interactive/">Dynamic Interactive</a></h3>
+          <p>Inhalte zum Entdecken: Prozess als Stepper, Case-Showcase mit Swipe, Lightbox, Logo-Marquee, animierte Kennzahlen und Timeline.</p>
+          <ul role="list"><li>ARIA-Tabs</li><li>Showcase</li><li>Lightbox</li><li>Fortschrittsbalken</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <li class="card card--d">
+        <div class="card__media"><img src="../img/case-fitness-600.webp" srcset="../img/case-fitness-600.webp 600w, ../img/case-fitness-1100.webp 1100w" sizes="(max-width:860px) 100vw, 640px" alt="" width="600" height="200" loading="lazy"></div>
+        <div class="card__body">
+          <span class="tag">Konzept D</span>
+          <h3><a href="concept-d-creative/">Creative Brand Evolution</a></h3>
+          <p>Mutiger Auftritt: Poster-Kompositionen, große Kursiv-Typografie, Salbeigrün als Fläche, Chevron-Bildrahmen aus dem Logo und gestapelte Case-Poster.</p>
+          <ul role="list"><li>Poster-Layout</li><li>Kinetic Type</li><li>Sticky Stack</li><li>Magnetic CTA</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+    </ul>
+    <h2 class="round">Runde 2 · E–H</h2>
+    <ul class="grid" role="list">
+      <li class="card card--e">
+        <div class="card__media"><img src="../img/about-team-640.webp" srcset="../img/about-team-640.webp 640w, ../img/about-team-1044.webp 1044w" sizes="(max-width:860px) 100vw, 640px" alt="" width="640" height="471" loading="lazy"></div>
+        <div class="card__body">
+          <span class="tag">Konzept E</span>
+          <h3><a href="concept-e-grid/">Architectural Grid</a></h3>
+          <p>Präzise wie ein Bauplan: sichtbares 12-Spalten-Raster, Passermarken, Spec-Tabellen für die Cases und ein Gantt-Diagramm aus den echten Projektzeiträumen.</p>
+          <ul role="list"><li>Raster-Layout</li><li>Spec-Tabelle</li><li>Gantt-Timeline</li><li>Abschnitts-Index</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <li class="card card--f">
+        <div class="card__media"><img src="../img/hero-800.webp" srcset="../img/hero-800.webp 800w, ../img/hero-1400.webp 1400w" sizes="(max-width:860px) 100vw, 640px" alt="" width="800" height="288" loading="lazy" style="object-position:right center"></div>
+        <div class="card__body">
+          <span class="tag">Konzept F</span>
+          <h3><a href="concept-f-noir/">Noir Cinematic</a></h3>
+          <p>Die Markenfarbe als nächtliche Bühne: komplett dunkel, Vollbild-Hero mit Ken-Burns, Sticky-Scrollytelling für den Prozess und ein Case-Reel mit Scroll-Snap.</p>
+          <ul role="list"><li>Dark Mode</li><li>Scrollytelling</li><li>Case-Reel</li><li>Spotlight-Hover</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <li class="card card--g">
+        <div class="card__media"><img src="../img/studies-hero-800.webp" srcset="../img/studies-hero-800.webp 800w, ../img/studies-hero-1300.webp 1300w" sizes="(max-width:860px) 100vw, 640px" alt="" width="800" height="400" loading="lazy"></div>
+        <div class="card__body">
+          <span class="tag">Konzept G</span>
+          <h3><a href="concept-g-bento/">Bento Dashboard</a></h3>
+          <p>Ergebnisse zuerst: Bento-Kacheln, Kennzahlen als Widgets, Flip-Karten mit echten Metriken, Insel-Navigation und ein dreistufiges Formular.</p>
+          <ul role="list"><li>Bento-Grid</li><li>Flip-Karten</li><li>Index-Balken</li><li>Stepper-Formular</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <li class="card card--h">
+        <div class="card__media"><img src="../img/testimonial-640.webp" srcset="../img/testimonial-640.webp 640w, ../img/testimonial-1100.webp 1100w" sizes="(max-width:860px) 100vw, 640px" alt="" width="640" height="427" loading="lazy"></div>
+        <div class="card__body">
+          <span class="tag">Konzept H</span>
+          <h3><a href="concept-h-editorial/">Organic Editorial</a></h3>
+          <p>Ein warmes Magazin in Kapiteln: Bögen als Bildmasken, Kursiv-Akzente, ein Hero-Bild, das sich beim Scrollen öffnet, und ein Formular als Brief.</p>
+          <ul role="list"><li>Kapitel-Layout</li><li>Bogen-Masken</li><li>SVG-Pfad</li><li>Brief-Formular</li></ul>
+          <span class="card__go" aria-hidden="true">Ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+    </ul>
+  </main>
+  <footer>Design-Vorschau – nicht öffentlich. Dokumentation: <code>redesigns/README.md</code> · Original: <a href="../index.html">index.html</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* =========================================================
+   AVINOVA — Concept B "Modern Premium"
+   Legal pages (Impressum, Datenschutz, AGB) — loads after premium.css.
+   The text itself is loaded from the original pages (AV.loadLegal).
+   ========================================================= */
+
+/* ---------- 1. Hero ---------- */
+.legal-hero{padding-bottom:clamp(56px,6vw,96px)}
+.legal-hero__grid{align-items:end;row-gap:28px}
+.legal-hero__text{grid-column:1 / span 7}
+.legal-hero__text .label{margin-bottom:clamp(20px,2vw,32px)}
+.legal-hero__title{font-size:clamp(42px,5vw,84px);overflow-wrap:break-word;hyphens:auto}
+.legal-hero__side{grid-column:9 / span 4}
+.legal-hero__side .lead{font-size:clamp(16px,1.15vw,18px);color:var(--on-dark-2)}
+.legal-hero__updated{margin-top:20px;padding-top:16px;border-top:1px solid var(--line-d);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-l)}
+
+/* ---------- 2. Layout ---------- */
+.legal{padding-block:clamp(64px,7vw,120px) var(--section)}
+.legal__grid{align-items:start}
+.legal__aside{grid-column:1 / span 3;align-self:stretch}
+.legal__sticky{position:sticky;top:100px;display:flex;flex-direction:column;gap:40px;max-height:calc(100vh - 124px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:4px}
+.legal__content{grid-column:5 / span 8;min-width:0}
+.legal__fallback{padding:24px 28px;border:1px solid var(--line);background:transparent;font-size:16px;line-height:1.6}
+.legal__fallback a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sage);text-underline-offset:3px}
+
+/* ---------- 3. Table of contents (active link: .is-active from AV.spy) ---------- */
+.toc__title{color:var(--muted);margin-bottom:16px}
+.toc__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.toc__list li{border-bottom:1px solid var(--line)}
+.toc__list a{position:relative;display:flex;align-items:baseline;gap:14px;min-height:44px;padding:11px 0 11px 0;font-size:15px;line-height:1.4;color:var(--muted);text-decoration:none;
+  transition:color var(--t-fast),padding-left var(--t-med) var(--ease-out)}
+.toc__list a::after{content:"";position:absolute;left:0;top:50%;width:0;height:1px;background:var(--ink);transition:width var(--t-med) var(--ease-out)}
+.toc__list a:hover{color:var(--ink)}
+.toc__list a.is-active{color:var(--ink);font-weight:600;padding-left:22px}
+.toc__list a.is-active::after{width:12px}
+html.js [data-legal-src].is-loaded .toc__list li{animation:toc-in .6s var(--ease-out) both;animation-delay:calc(var(--i,0) * 50ms)}
+@keyframes toc-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* page switcher */
+.legal-switch{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.legal-switch a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;border-bottom:1px solid var(--line);font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;transition:color var(--t-fast)}
+.legal-switch svg{width:16px;height:16px;transition:transform var(--t-med) var(--ease-out)}
+.legal-switch a:hover{color:var(--sage)}
+.legal-switch a:hover svg{transform:translateX(4px)}
+.legal-switch a[aria-current="page"]{color:var(--sage);font-weight:600}
+.legal-switch a[aria-current="page"] svg{transform:rotate(90deg)}
+
+/* ---------- 4. Prose (original .prose markup) ---------- */
+.prose{color:var(--text);max-width:760px}
+.prose section{padding-bottom:clamp(36px,4vw,56px);margin-bottom:clamp(36px,4vw,56px);border-bottom:1px solid var(--line);scroll-margin-top:100px}
+.prose section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.prose h2{font-size:clamp(26px,2.4vw,36px);font-weight:300;line-height:1.15;letter-spacing:-.025em;color:var(--ink);margin-bottom:20px;overflow-wrap:break-word;hyphens:auto}
+.prose h3{font-size:19px;font-weight:600;color:var(--ink);margin:28px 0 8px;overflow-wrap:break-word;hyphens:auto}
+.prose p{font-size:17px;line-height:1.75;margin-bottom:14px}
+.prose p:last-child{margin-bottom:0}
+.prose ul{margin:8px 0 16px;padding:0;list-style:none}
+.prose li{position:relative;padding:6px 0 6px 28px;font-size:17px;line-height:1.65}
+.prose li::before{content:"";position:absolute;left:0;top:calc(6px + .82em);width:14px;height:1px;background:var(--sage)}
+.prose a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sage);text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere;transition:color var(--t-fast)}
+.prose a:hover{color:var(--sage)}
+.prose address{font-style:normal;font-size:17px;line-height:1.75}
+.prose strong{color:var(--ink);font-weight:600}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.info-card{padding:24px 0 0;border-top:1px solid var(--line-strong)}
+.info-card .eyebrow{display:block;margin-bottom:12px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage)}
+.info-card address,.info-card p{font-size:17px;line-height:1.7}
+.note{margin-top:16px;padding:18px 22px;border-left:2px solid var(--sage);background:var(--paper-2);font-size:15.5px!important;line-height:1.65!important}
+
+/* ---------- 5. Responsive ---------- */
+@media (max-width:1023px){
+  .legal-hero__text{grid-column:1 / -1}
+  .legal-hero__side{grid-column:1 / span 8}
+  .legal__aside{grid-column:1 / span 4}
+  .legal__content{grid-column:5 / span 8}
+}
+@media (max-width:899px){
+  .legal__sticky{position:static;gap:32px;max-height:none;overflow:visible;padding:0}
+  .legal__aside{margin-bottom:56px}
+}
+@media (max-width:600px){
+  .info-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .prose p,.prose li,.prose address,.info-card address,.info-card p{font-size:16px}
+}

@@ -1,0 +1,80 @@
+/* =========================================================
+   Concept D — Legal pages (Impressum, Datenschutz, AGB)
+   Bold shell, sober reading area. Text is loaded at runtime
+   from the original pages (AV.loadLegal). Loads after main.css.
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+.legal-hero{background:var(--c-green);color:var(--c-on-dark-2);padding-block:clamp(40px,6vw,96px) clamp(40px,5vw,72px);overflow:clip}
+.legal-hero .breadcrumb{margin-bottom:24px;font-size:var(--f-small)}
+.legal-hero .breadcrumb ol{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0;padding:0;list-style:none}
+.legal-hero .breadcrumb li{display:flex;align-items:center;gap:10px}
+.legal-hero .breadcrumb li + li::before{content:"/";color:var(--c-sage)}
+.legal-hero .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;color:var(--c-on-dark);font-weight:600}
+.legal-hero .breadcrumb [aria-current]{color:var(--c-on-dark-2)}
+.legal-hero__title{font-size:clamp(2.25rem,1rem + 6vw,7rem);color:var(--c-on-dark);margin-bottom:24px;hyphens:auto;-webkit-hyphens:auto}
+.legal-hero__intro{font-size:var(--f-lead);line-height:1.6;max-width:44em;margin-bottom:20px}
+.legal-hero__title--long{font-size:clamp(1.5rem,6.4vw,6.25rem)} /* single 19–20 letter words */
+.legal-hero__updated{display:inline-block;margin:0;padding:6px 12px;background:var(--c-sage);color:var(--c-green);font-weight:700;font-size:.875rem;transform:rotate(-2deg)}
+.legal-hero :focus-visible{outline-color:var(--c-sage)}
+
+/* ---------- Layout ---------- */
+.legal__grid{display:grid;gap:40px;padding-block:clamp(40px,6vw,96px)}
+.legal__aside{align-self:start}
+.legal__aside-title{margin-bottom:12px;font-size:.8125rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--c-navy)}
+
+/* TOC (filled by AV.loadLegal; active link gets .is-active) */
+.legal__toc{display:grid;margin:0 0 28px;padding:0;list-style:none;border-top:3px solid var(--c-green)}
+.legal__toc:empty{display:none}
+.legal__toc li{border-bottom:1px solid var(--c-line)}
+.legal__toc a{display:flex;align-items:center;min-height:44px;padding:8px 12px;color:var(--c-ink);font-size:.9375rem;font-weight:500;line-height:1.35;text-decoration:none;transition:background-color .2s,color .2s}
+.legal__toc a:hover{background:rgba(169,199,182,.35)}
+.legal__toc a.is-active{background:var(--c-green);color:var(--c-on-dark)}
+
+/* page switcher */
+.legal__switch{display:grid;gap:8px}
+.legal__switch a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 14px;border:2px solid var(--c-green);color:var(--c-green);font-weight:700;text-decoration:none;transition:box-shadow .25s var(--ease)}
+.legal__switch a:hover{box-shadow:4px 4px 0 var(--c-sage)}
+.legal__switch a[aria-current="page"]{background:var(--c-sage)}
+.legal__switch svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square}
+
+/* ---------- Prose (loaded from the original .prose) ---------- */
+.prose{max-width:46rem;color:var(--c-text);font-size:1.0625rem;line-height:1.75}
+.prose section{padding-bottom:36px;margin-bottom:36px;border-bottom:1px solid var(--c-line);scroll-margin-top:calc(var(--header-h) + 24px)}
+.prose section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.prose h2{display:flex;align-items:baseline;gap:12px;font-size:clamp(1.5rem,1.2rem + 1vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;color:var(--c-green);margin-bottom:16px;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+.prose h2::before{content:"";flex:none;width:.55em;height:.55em;background:var(--c-sage);clip-path:polygon(0 0,45% 0,100% 50%,45% 100%,0 100%,55% 50%)}
+.prose h3{font-size:1.1875rem;font-weight:700;color:var(--c-ink);margin:24px 0 8px;overflow-wrap:break-word}
+.prose p{margin-bottom:14px}
+.prose p:last-child{margin-bottom:0}
+.prose a{color:var(--c-navy);font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--c-sage);overflow-wrap:anywhere}
+.prose a:hover{text-decoration-color:var(--c-navy)}
+.prose ul{margin:6px 0 14px;padding-left:0;list-style:none}
+.prose li{position:relative;padding-left:24px;margin-bottom:6px}
+.prose li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;background:var(--c-green);clip-path:polygon(0 0,45% 0,100% 50%,45% 100%,0 100%,55% 50%)}
+.prose address{font-style:normal}
+.prose strong{color:var(--c-ink)}
+.prose .info-grid{display:grid;gap:16px}
+.prose .info-card{padding:22px 24px;background:var(--c-paper-2);border:2px solid var(--c-green);box-shadow:6px 6px 0 var(--c-sage)}
+.prose .info-card .eyebrow{margin-bottom:10px;font-size:.75rem}
+.prose .note{margin-top:14px;padding:16px 20px;background:rgba(169,199,182,.28);border-left:6px solid var(--c-sage);font-size:.9375rem;line-height:1.65}
+
+/* fallback (no JS / file:// / fetch failure) */
+[data-legal-fallback]{border-radius:0;background:rgba(169,199,182,.28);border-left:6px solid var(--c-sage)}
+[data-legal-fallback] a{color:var(--c-navy);font-weight:700}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (min-width:600px){
+  .prose .info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:768px) and (max-width:1023px){
+  .legal__toc{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+  .legal__switch{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:1024px){
+  .legal__grid{grid-template-columns:280px minmax(0,1fr);gap:clamp(48px,6vw,112px)}
+  .legal__aside{position:sticky;top:calc(var(--header-h) + 24px);max-height:calc(100vh - var(--header-h) - 48px);overflow-y:auto}
+  .prose{font-size:1.125rem}
+}
